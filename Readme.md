@@ -124,6 +124,26 @@ git reset --hard [commit]
 Discards all history and changes back to the specified commit
 ```
 
+## Stashing 
+Think of the Stash as a clipboard on steroids: it takes all the changes in your working copy and saves them for you on a new clipboard. You're left with a clean working copy, i.e. you have no more local changes.
+
+Later, at any time, you can restore the changes from that clipboard in your working copy - and continue working where you left off.
+
+You can create as many Stashes as you want - you're not limited to storing only one set of changes. Also, a Stash is not bound to the branch where you created it: when you restore it, the changes will be applied to your current HEAD branch, whichever this may be.
+
+``` 
+after add .
+git stash
+```
+
+you will see, once you try to commit it wont show anything to commit. to bring it back 
+```
+git stash list
+git stash pop
+or
+git stash apply <stashname>
+```
+
 ## Glossary
 __git:__ an open source, distributed version-control system.<br/>
 __GitHub:__ a platform for hosting and collaborating on Git repositories<br/>
