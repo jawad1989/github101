@@ -156,3 +156,11 @@ __pull request:__ a place to compare and discuss the differences introduced on a
 tests, and more<br/>
 __HEAD:__ representing your current working directory, the HEAD pointer can be moved to different branches, tags, or commits
 when using git checkout
+
+
+
+## Git Workflows
+
+### Git Flow
+### GitHub Flow
+### Git Lab Flow
