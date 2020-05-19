@@ -3,6 +3,13 @@ Git is the open source distributed version control system that facilitates GitHu
 your laptop or desktop. This cheat sheet summarizes commonly used Git command line
 instructions for quick reference
 
+Main concepts:
+
+* **Git** is a non-linear, distributed version control system.
+* **Repository** stores data and meta-information about the data.
+* **Commit** is a fixed state of the repository.
+* **Branch** is a reference to a commit. 
+* **Merge request** (also called pull request) - is a request to unite two different states of the repository into one new state.
 
 ![GIT](https://github.com/jawad1989/github101/blob/master/images/centralized-1.png)
 
@@ -206,19 +213,32 @@ Once it is merged and pushed to master, you can and should deploy immediately
 
 The GitLab Flow is a workflow created by GitLab in 2014. It combine feature-driven development and feature branches with issue tracking. The most difference between GitLab Flow and GitHub Flow are the environment branches having in GitLab Flow (e.g. staging and production) because there will be a project that isn’t able to deploy to production every time you merge a feature branch (e.g. SaaS applications and Mobile Apps)
 
+If you're not ready to deploy on production right away, GitLab flow offers GitHub flow + environments. Here's how it works - you develop in feature branches, same as above, merge into master, same as above, but here's a twist: master equals only test environment. In addition to that, you have "Environment branches" which are linked to various other environments you might have.
+
 ![More Details](https://github.com/jawad1989/github101/blob/master/images/environment_branches_gitLab.png)
 
-The GitLab Flow is based on 11 rules:
-* Use feature branches, no direct commits on master
-* Test all commits, not only ones on master
-* Run all the tests on all commits (if your tests run longer than 5 minutes have them run in parallel).
-* Perform code reviews before merges into master, not afterwards.
-* Deployments are automatic, based on branches or tags.
-* Tags are set by the user, not by CI.
-* Releases are based on tags.
-* Pushed commits are never rebased.
-* Everyone starts from master, and targets master.
-* Fix bugs in master first and release branches second.
-* Commit messages reflect intent.
+
+Usually, three environments exist (you can create more if you need it):
+
+* Test environment == master branch
+* PreProduction environment == preprod branch
+* Production environment == prod branch
+
+The code that arrives into one of the environment branches should be moved into the corresponding environment immediately, it can be done:
+
+* Automatically (we'll be at it in parts 2 and 3)
+* Semi-automatically (same as automatically except a button authorizing the deployment should be pressed)
+* Manually
+
+The whole process goes like this:
+
+1. Feature is developed in feature branch.
+2. Feature branch is reviewed and merged into master branch.
+3. After a while (several features merged) master is merged into preprod
+4. After a while (user testing, etc.) preprod is merged into prod  
+5. While we were merging and testing, several new features were developed and merged into master, so GOTO 3.
+
+Here's how it looks like:
+![gitlab](https://github.com/jawad1989/github101/blob/master/images/gitlab-flow.png)
 
 [More Details](https://about.gitlab.com/blog/2014/09/29/gitlab-flow/)
