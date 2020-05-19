@@ -1,6 +1,14 @@
+# GIT
 Git is the open source distributed version control system that facilitates GitHub activities on
 your laptop or desktop. This cheat sheet summarizes commonly used Git command line
 instructions for quick reference
+![GIT](https://github.com/jawad1989/github101/blob/master/images/centralized-1.png)
+
+# Subversion VS GIT 
+
+![SCMvsVCS](https://github.com/jawad1989/github101/blob/master/images/centralized-vs-distributed.png)
+
+# GIT BASIC COMMANDS
 
 ## Install
 
@@ -162,5 +170,51 @@ when using git checkout
 ## Git Workflows
 
 ### Git Flow
+
+The Git Flow is the most known workflow on this list. It was created by Vincent Driessen in 2010 and it is based in two main branches with infinite lifetime:
+![GITFLOW](https://github.com/jawad1989/github101/blob/master/images/356-3561396_gitflow-workflow-git-flow-hd-png-download.png)
+
+* master — this branch contains production code. All development code is merged into master in sometime.
+* develop — this branch contains pre-production code. When the features are finished then they are merged into develop.
+During the development cycle, a variety of supporting branches are used:
+* feature-* — feature branches are used to develop new features for the upcoming releases. May branch off from develop and must merge into develop.
+* hotfix-* — hotfix branches are necessary to act immediately upon an undesired status of master. May branch off from master and must merge into master anddevelop.
+* release-* — release branches support preparation of a new production release. They allow many minor bug to be fixed and preparation of meta-data for a release. May branch off from develop and must merge into master anddevelop.
+
 ### GitHub Flow
+[More Details](https://guides.github.com/introduction/flow/)
+
+
+
+The GitHub Flow is a lightweight workflow. It was created by GitHub in 2011 and respects the following 6 principles:
+Anything in the master branch is deployable
+
+![GITHUBFLOW](https://github.com/jawad1989/github101/blob/master/images/github-flow-2.png)
+
+To work on something new, create a branch off frommaster and given a descriptively name(ie: new-oauth2-scopes)
+Commit to that branch locally and regularly push your work to the same named branch on the server
+When you need feedback or help, or you think the branch is ready for merging, open a pull request
+After someone else has reviewed and signed off on the feature, you can merge it into master
+Once it is merged and pushed to master, you can and should deploy immediately
+
+
 ### Git Lab Flow
+
+The GitLab Flow is a workflow created by GitLab in 2014. It combine feature-driven development and feature branches with issue tracking. The most difference between GitLab Flow and GitHub Flow are the environment branches having in GitLab Flow (e.g. staging and production) because there will be a project that isn’t able to deploy to production every time you merge a feature branch (e.g. SaaS applications and Mobile Apps)
+
+![More Details](https://github.com/jawad1989/github101/blob/master/images/environment_branches_gitLab.png)
+
+The GitLab Flow is based on 11 rules:
+* Use feature branches, no direct commits on master
+* Test all commits, not only ones on master
+* Run all the tests on all commits (if your tests run longer than 5 minutes have them run in parallel).
+* Perform code reviews before merges into master, not afterwards.
+* Deployments are automatic, based on branches or tags.
+* Tags are set by the user, not by CI.
+* Releases are based on tags.
+* Pushed commits are never rebased.
+* Everyone starts from master, and targets master.
+* Fix bugs in master first and release branches second.
+* Commit messages reflect intent.
+
+[More Details](https://about.gitlab.com/blog/2014/09/29/gitlab-flow/)
