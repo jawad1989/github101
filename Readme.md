@@ -3,9 +3,10 @@ Git is the open source distributed version control system that facilitates GitHu
 your laptop or desktop. This cheat sheet summarizes commonly used Git command line
 instructions for quick reference
 
-[GIT Official BOOK](https://book.git-scm.com/book/en/v2/Getting-Started-About-Version-Control#ch01-getting-started)
 
 ![GIT](https://github.com/jawad1989/github101/blob/master/images/centralized-1.png)
+
+You can read more about GIT here [GIT Official BOOK](https://book.git-scm.com/book/en/v2/Getting-Started-About-Version-Control#ch01-getting-started)
 
 # Subversion VS GIT 
 
